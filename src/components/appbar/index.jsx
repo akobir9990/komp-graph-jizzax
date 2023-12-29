@@ -18,11 +18,8 @@ import { NavLink } from "react-router-dom";
 import "../../router/const";
 import {
   ABOUT_PAGE,
-  AKT_RANKING,
   AUTHOR_PAGE,
-  ENGLISH_RANKING,
-  LABORATORY_PAGE,
-  NATIONAL_RANKING,
+  LECTURES_PAGE,
   PRACTICE_PAGE,
   PRESENTATION_PAGE,
   TEST_PAGE,
@@ -32,14 +29,11 @@ import {
 
 const pages = [
   { id: 1, name: "O'quv qo'llanma", path: TUTORIAL_PAGE },
-  { id: 2, name: "Taqdimotlar", path: PRESENTATION_PAGE },
-  { id: 3, name: "Videolar", path: VIDEOS_PAGE },
-  { id: 4, name: "Amaliyotlar", path: PRACTICE_PAGE },
-  { id: 5, name: "Laboratoriyalar", path: LABORATORY_PAGE },
+  { id: 2, name: "Ma'ruzalar matni", path: LECTURES_PAGE },
+  { id: 3, name: "Taqdimotlar", path: PRESENTATION_PAGE },
+  { id: 4, name: "Videolar", path: VIDEOS_PAGE },
+  { id: 5, name: "Amaliyotlar", path: PRACTICE_PAGE },
   { id: 6, name: "Testlar", path: TEST_PAGE },
-  { id: 7, name: "Milliy reyting", path: NATIONAL_RANKING },
-  { id: 7, name: "ATK REYTING", path: AKT_RANKING },
-  { id: 7, name: "ENG REYTING", path: ENGLISH_RANKING },
 ];
 const settings = [
   { id: 1, name: "Muallif haqida", path: AUTHOR_PAGE },
@@ -64,7 +58,7 @@ function ResponsiveAppBar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-  const nameOfScinece = "ATJMM";
+  const nameOfScinece = "KG";
 
   return (
     <div>

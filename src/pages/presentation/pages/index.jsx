@@ -1,0 +1,10 @@
+export { default as One } from "./1";
+export { default as Two } from "./2";
+export { default as Three } from "./3";
+export { default as Four } from "./4";
+export { default as Five } from "./5";
+export { default as Six } from "./6";
+export { default as Seven } from "./7";
+export { default as Eight } from "./8";
+export { default as Nine } from "./9";
+export { default as Ten } from "./10";

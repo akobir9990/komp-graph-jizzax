@@ -70,8 +70,6 @@ function Quiz() {
     setRandomNumber(getRandomNumber());
   }, []);
 
-  // console.log("scorePercent => ", scorePercent, typeof scorePercent);
-
   return (
     <div>
       {showScore ? (
@@ -99,7 +97,6 @@ function Quiz() {
               >
                 {scorePercent}%
               </div>
-              {/* <div className="bg-white h-9 min-w-0 max-w-[100%]"></div> */}
             </div>
             <div className="sm:text-[40px] text-[30px]">
               {scorePercent < 56 ? (
