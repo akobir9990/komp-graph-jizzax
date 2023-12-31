@@ -2,7 +2,6 @@ import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import abdullayev from "../../assets/images/author.jpeg";
-
 export default function MediaCard() {
   return (
     <div className="h-[100vh]">
@@ -14,10 +13,9 @@ export default function MediaCard() {
             alt="Abdullayev Zafar Sayfutdinovich"
           />
         </div>
-
         <CardContent className="sm:text-4xl">
           <h1 className="text-[30px] font-bold">
-            Abdullayev Zafar Sayfutdinovich
+            MUХITDINОV АBDUVАXOB ABDUVALIYEVICH
           </h1>
           <h2 className="text-[20px]">
             Axborot texnologiyalari kafedrasi mudiri <br /> fizika matematika

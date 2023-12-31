@@ -1,21 +1,15 @@
 import React, { useState } from "react";
 
-import one from "./img/1.svg";
-import two from "./img/2.svg";
-import three from "./img/3.svg";
-import four from "./img/4.svg";
-import five from "./img/5.svg";
-import six from "./img/6.svg";
-import seven from "./img/7.svg";
-import eight from "./img/8.svg";
-import nine from "./img/9.svg";
-import ten from "./img/10.svg";
-import eleven from "./img/11.svg";
-import twelve from "./img/12.svg";
-import thirteen from "./img/13.svg";
-import fourteen from "./img/14.svg";
-import fifteen from "./img/15.svg";
-import sixteen from "./img/16.svg";
+import one from "./img/1.jpg";
+import two from "./img/2.jpg";
+import three from "./img/3.jpg";
+import four from "./img/4.jpg";
+import five from "./img/5.jpg";
+import six from "./img/6.jpg";
+import seven from "./img/7.jpg";
+import eight from "./img/8.jpg";
+import nine from "./img/9.jpg";
+import ten from "./img/10.jpg";
 import "./style.css";
 
 import { Button, Container, Box } from "@mui/material";
@@ -24,7 +18,7 @@ import { TelegramIcon, TelegramShareButton } from "react-share";
 
 function One() {
   const [goBack, setGoBack] = useState(false);
-  const path = "https://t.me/atjmmmm/2";
+  const path = "";
 
   const items = [
     { id: 1, name: one },
@@ -37,12 +31,6 @@ function One() {
     { id: 8, name: eight },
     { id: 9, name: nine },
     { id: 10, name: ten },
-    { id: 11, name: eleven },
-    { id: 12, name: twelve },
-    { id: 13, name: thirteen },
-    { id: 14, name: fourteen },
-    { id: 15, name: fifteen },
-    { id: 16, name: sixteen },
   ];
   return (
     <Container sx={{ width: "100%" }}>
@@ -65,7 +53,7 @@ function One() {
             </Button>
           </NavLink>
         ) : (
-          <NavLink to="/presentation">
+          <NavLink to="/lectures">
             <Button onMouseLeave={() => setGoBack(!goBack)} variant="contained">
               ortga
             </Button>

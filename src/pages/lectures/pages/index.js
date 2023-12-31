@@ -1,0 +1,15 @@
+export { default as LecturesOne } from "./1";
+export { default as LecturesTwo } from "./2";
+export { default as LecturesThree } from "./3";
+export { default as LecturesFour } from "./4";
+export { default as LecturesFive } from "./5";
+export { default as LecturesSix } from "./6";
+export { default as LecturesSeven } from "./7";
+export { default as LecturesEight } from "./8";
+export { default as LecturesNine } from "./9";
+export { default as LecturesTen } from "./10";
+export { default as LecturesElevn } from "./11";
+export { default as LecturesTwelve } from "./12";
+export { default as LecturesThirteen } from "./13";
+export { default as LecturesFourteen } from "./14";
+export { default as LecturesFifteen } from "./15";

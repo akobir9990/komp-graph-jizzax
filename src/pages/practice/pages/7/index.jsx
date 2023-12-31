@@ -1,21 +1,29 @@
 import React, { useState } from "react";
 
-import one from "./img/1.svg";
-import two from "./img/2.svg";
-import three from "./img/3.svg";
-import four from "./img/4.svg";
-import five from "./img/5.svg";
-import six from "./img/6.svg";
-import seven from "./img/7.svg";
-import eight from "./img/8.svg";
-import nine from "./img/9.svg";
-import ten from "./img/10.svg";
-import eleven from "./img/11.svg";
-import twelve from "./img/12.svg";
-import thirteen from "./img/13.svg";
-import fourteen from "./img/14.svg";
-import fifteen from "./img/15.svg";
-import sixteen from "./img/16.svg";
+import one from "./img/1.jpeg";
+import two from "./img/2.jpeg";
+import three from "./img/3.jpeg";
+import four from "./img/4.jpeg";
+import five from "./img/5.jpeg";
+import six from "./img/6.jpeg";
+import seven from "./img/7.jpeg";
+import eight from "./img/8.jpeg";
+import nine from "./img/9.jpeg";
+import ten from "./img/10.jpeg";
+import eleven from "./img/11.jpeg";
+import twelve from "./img/12.jpeg";
+import threeTeen from "./img/13.jpeg";
+import fourTeen from "./img/14.jpeg";
+import fifTeen from "./img/15.jpeg";
+import sixteen from "./img/16.jpeg";
+import seventeen from "./img/17.jpeg";
+import eightteen from "./img/18.jpeg";
+import nineteen from "./img/19.jpeg";
+import twenty from "./img/20.jpeg";
+import twentyOne from "./img/21.jpeg";
+import twentyTwo from "./img/22.jpeg";
+import twentyThree from "./img/23.jpeg";
+import twentyFour from "./img/24.jpeg";
 
 import { Box, Button, Container } from "@mui/material";
 import { NavLink } from "react-router-dom";
@@ -23,7 +31,7 @@ import { TelegramIcon, TelegramShareButton } from "react-share";
 
 function Seven() {
   const [goBack, setGoBack] = useState(false);
-  const path = "https://t.me/atjmmmm/2";
+  const path = "";
   const items = [
     { id: 1, name: one },
     { id: 2, name: two },
@@ -37,10 +45,18 @@ function Seven() {
     { id: 10, name: ten },
     { id: 11, name: eleven },
     { id: 12, name: twelve },
-    { id: 13, name: thirteen },
-    { id: 14, name: fourteen },
-    { id: 15, name: fifteen },
+    { id: 13, name: threeTeen },
+    { id: 14, name: fourTeen },
+    { id: 15, name: fifTeen },
     { id: 16, name: sixteen },
+    { id: 17, name: seventeen },
+    { id: 18, name: eightteen },
+    { id: 19, name: nineteen },
+    { id: 20, name: twenty },
+    { id: 21, name: twentyOne },
+    { id: 22, name: twentyTwo },
+    { id: 23, name: twentyThree },
+    { id: 24, name: twentyFour },
   ];
   return (
     <Container>
@@ -63,7 +79,7 @@ function Seven() {
             </Button>
           </NavLink>
         ) : (
-          <NavLink to="/presentation">
+          <NavLink to="/practice">
             <Button onMouseLeave={() => setGoBack(!goBack)} variant="contained">
               ortga
             </Button>

@@ -1,0 +1,10 @@
+export { default as PracticesOne } from "./1";
+export { default as PracticesTwo } from "./2";
+export { default as PracticesThree } from "./3";
+export { default as PracticesFour } from "./4";
+export { default as PracticesFive } from "./5";
+export { default as PracticesSix } from "./6";
+export { default as PracticesSeven } from "./7";
+export { default as PracticesEight } from "./8";
+export { default as PracticesNine } from "./9";
+export { default as PracticesTen } from "./10";

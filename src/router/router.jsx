@@ -10,17 +10,21 @@ import Practice from "../pages/practice";
 import Videos from "../pages/videos";
 import Tutorial from "../pages/tutorial";
 import TestAPage from "../pages/tests";
+import Lectures from "../pages/lectures";
 
 import "./const";
 import {
   ABOUT_PAGE,
   AUTHOR_PAGE,
   HOME_PAGE,
+  LECTURES_PAGE,
   PRACTICE_PAGE,
   PRESENTATION_PAGE,
   TEST_PAGE,
   TUTORIAL_PAGE,
   VIDEOS_PAGE,
+  lecturesArr,
+  practiceArr,
   presentationsArr,
 } from "./const";
 
@@ -33,17 +37,25 @@ function router() {
         <Route path={AUTHOR_PAGE} element={<Author />} />
         <Route path={ABOUT_PAGE} element={<About />} />
         <Route path={VIDEOS_PAGE} element={<Videos />} />
+        <Route path={TEST_PAGE} element={<TestAPage />} />
+        <Route path={LECTURES_PAGE}>
+          <Route path="" element={<Lectures />} />
+          {lecturesArr.map((item) => (
+            <Route key={item.id} path={item.path} element={<item.Element />} />
+          ))}
+        </Route>
         <Route path={PRESENTATION_PAGE}>
           <Route path="" element={<Presentation />} />
-          {presentationsArr.map((item) => {
-            return (
-              <Route key={item.id} path={item.path} element={item.Element} />
-            );
-          })}
+          {presentationsArr.map((item) => (
+            <Route key={item.id} path={item.path} element={<item.Element />} />
+          ))}
         </Route>
-
-        <Route path={PRACTICE_PAGE} element={<Practice />} />
-        <Route path={TEST_PAGE} element={<TestAPage />} />
+        <Route path={PRACTICE_PAGE}>
+          <Route path="" element={<Practice />} />
+          {practiceArr.map((item) => (
+            <Route key={item.id} path={item.path} element={<item.Element />} />
+          ))}
+        </Route>
       </Routes>
     </div>
   );

@@ -1,6 +1,16 @@
 import React from "react";
-import { Box, Container } from "@mui/material";
-import "./style.css";
+import {
+  Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Container,
+  Typography,
+} from "@mui/material";
+import { items } from "../presentation/const";
+import { NavLink } from "react-router-dom";
+import { TelegramIcon, TelegramShareButton } from "react-share";
 function HomePage() {
   return (
     <Container>

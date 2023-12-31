@@ -7,65 +7,38 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
-import abdullayev from "../../assets/images/author.jpeg";
+import ComputerIcon from "@mui/icons-material/Computer";
+import PersonIcon from "@mui/icons-material/Person";
 import Router from "../../router/router";
 import { NavLink } from "react-router-dom";
 import "../../router/const";
-import {
-  ABOUT_PAGE,
-  AUTHOR_PAGE,
-  LECTURES_PAGE,
-  PRACTICE_PAGE,
-  PRESENTATION_PAGE,
-  TEST_PAGE,
-  TUTORIAL_PAGE,
-  VIDEOS_PAGE,
-} from "../../router/const";
-
-const pages = [
-  { id: 1, name: "O'quv qo'llanma", path: TUTORIAL_PAGE },
-  { id: 2, name: "Ma'ruzalar matni", path: LECTURES_PAGE },
-  { id: 3, name: "Taqdimotlar", path: PRESENTATION_PAGE },
-  { id: 4, name: "Videolar", path: VIDEOS_PAGE },
-  { id: 5, name: "Amaliyotlar", path: PRACTICE_PAGE },
-  { id: 6, name: "Testlar", path: TEST_PAGE },
-];
-const settings = [
-  { id: 1, name: "Muallif haqida", path: AUTHOR_PAGE },
-  { id: 2, name: "Dastur haqida", path: ABOUT_PAGE },
-];
+import { pages, settings } from "./const";
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
-
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-  const nameOfScinece = "KG";
-
+  const nameOfScinece = "MvaKG";
   return (
     <div>
       <AppBar position="fixed">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+            <ComputerIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
             <Typography
               variant="h6"
               noWrap
@@ -81,7 +54,6 @@ function ResponsiveAppBar() {
             >
               {nameOfScinece}
             </Typography>
-
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
                 size="large"
@@ -127,7 +99,7 @@ function ResponsiveAppBar() {
                 ))}
               </Menu>
             </Box>
-            <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+            <ComputerIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
             <Typography
               variant="h5"
               noWrap
@@ -158,11 +130,10 @@ function ResponsiveAppBar() {
                 </NavLink>
               ))}
             </Box>
-
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src={abdullayev} />
+                  <PersonIcon className="bg-[white] rounded-full" />
                 </IconButton>
               </Tooltip>
               <Menu
