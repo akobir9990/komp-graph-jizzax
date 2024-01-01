@@ -35,7 +35,7 @@ function ResponsiveAppBar() {
   const nameOfScinece = "MvaKG";
   return (
     <div>
-      <AppBar position="fixed">
+      <AppBar position="fixed" sx={{ background: "24A1DE" }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <ComputerIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />

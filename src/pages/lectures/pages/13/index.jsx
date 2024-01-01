@@ -1,21 +1,14 @@
 import React, { useState } from "react";
 
-import one from "./img/1.jpg";
-import two from "./img/2.jpg";
-import three from "./img/3.jpg";
-
 import { Box, Button, Container } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import { TelegramIcon, TelegramShareButton } from "react-share";
+import { items } from "./const";
 
-function Ten() {
+export default function Thirteen() {
   const [goBack, setGoBack] = useState(false);
   const path = "";
-  const items = [
-    { id: 1, name: one },
-    { id: 2, name: two },
-    { id: 3, name: three },
-  ];
+
   return (
     <Container>
       <Box
@@ -56,5 +49,3 @@ function Ten() {
     </Container>
   );
 }
-
-export default Ten;
