@@ -9,18 +9,20 @@ import Presentation from "../pages/presentation";
 import Practice from "../pages/practice";
 import Videos from "../pages/videos";
 import Tutorial from "../pages/tutorial";
-import TestAPage from "../pages/tests";
+import TaskPage from "../pages/task";
 import Lectures from "../pages/lectures";
+import Brat from "../pages/brat";
 
 import "./const";
 import {
   ABOUT_PAGE,
   AUTHOR_PAGE,
+  BRATS_PAGE,
   HOME_PAGE,
   LECTURES_PAGE,
   PRACTICE_PAGE,
   PRESENTATION_PAGE,
-  TEST_PAGE,
+  TASK_PAGE,
   TUTORIAL_PAGE,
   VIDEOS_PAGE,
   lecturesArr,
@@ -37,7 +39,7 @@ function router() {
         <Route path={AUTHOR_PAGE} element={<Author />} />
         <Route path={ABOUT_PAGE} element={<About />} />
         <Route path={VIDEOS_PAGE} element={<Videos />} />
-        <Route path={TEST_PAGE} element={<TestAPage />} />
+        <Route path={TASK_PAGE} element={<TaskPage />} />
         <Route path={LECTURES_PAGE}>
           <Route path="" element={<Lectures />} />
           {lecturesArr.map((item) => (
@@ -56,6 +58,7 @@ function router() {
             <Route key={item.id} path={item.path} element={<item.Element />} />
           ))}
         </Route>
+        <Route path={BRATS_PAGE} element={<Brat />} />
       </Routes>
     </div>
   );

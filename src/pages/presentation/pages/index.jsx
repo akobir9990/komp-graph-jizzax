@@ -8,3 +8,8 @@ export { default as PressentationsSeven } from "./7";
 export { default as PressentationsEight } from "./8";
 export { default as PressentationsNine } from "./9";
 export { default as PressentationsTen } from "./10";
+export { default as PressentationsEleven } from "./11";
+export { default as PressentationsTvelwe } from "./12";
+export { default as PressentationsThirteen } from "./13";
+export { default as PressentationsFourteen } from "./14";
+export { default as PressentationsFiveteen } from "./15";

@@ -38,22 +38,28 @@ function ResponsiveAppBar() {
       <AppBar position="fixed" sx={{ background: "24A1DE" }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <ComputerIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-            <Typography
-              variant="h6"
-              noWrap
-              sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              {nameOfScinece}
-            </Typography>
+            <NavLink to="/" className="flex items-center justify-center">
+              <ComputerIcon
+                sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+              />
+
+              <Typography
+                variant="h6"
+                noWrap
+                sx={{
+                  mr: 2,
+                  display: { xs: "none", md: "flex" },
+                  fontFamily: "monospace",
+                  fontWeight: 700,
+                  letterSpacing: ".3rem",
+                  color: "inherit",
+                  textDecoration: "none",
+                  cursor: "pointer",
+                }}
+              >
+                {nameOfScinece}
+              </Typography>
+            </NavLink>
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
                 size="large"
@@ -99,25 +105,29 @@ function ResponsiveAppBar() {
                 ))}
               </Menu>
             </Box>
-            <ComputerIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href=""
-              sx={{
-                mr: 2,
-                display: { xs: "flex", md: "none" },
-                flexGrow: 1,
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              {nameOfScinece}
-            </Typography>
+            <NavLink to="/" className="flex items-center justify-center">
+              <ComputerIcon
+                sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+              />
+              <Typography
+                variant="h5"
+                noWrap
+                component="a"
+                href=""
+                sx={{
+                  mr: 2,
+                  display: { xs: "flex", md: "none" },
+                  flexGrow: 1,
+                  fontFamily: "monospace",
+                  fontWeight: 700,
+                  letterSpacing: ".3rem",
+                  color: "inherit",
+                  textDecoration: "none",
+                }}
+              >
+                {nameOfScinece}
+              </Typography>
+            </NavLink>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
                 <NavLink to={page.path} key={page.id}>
@@ -130,7 +140,7 @@ function ResponsiveAppBar() {
                 </NavLink>
               ))}
             </Box>
-            <Box sx={{ flexGrow: 0 }}>
+            <Box className="">
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <PersonIcon className="bg-[white] rounded-full" />

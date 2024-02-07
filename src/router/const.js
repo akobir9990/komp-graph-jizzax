@@ -9,6 +9,11 @@ import {
   PressentationsEight,
   PressentationsNine,
   PressentationsTen,
+  PressentationsEleven,
+  PressentationsTvelwe,
+  PressentationsThirteen,
+  PressentationsFourteen,
+  PressentationsFiveteen,
 } from "../pages/presentation/pages";
 import {
   LecturesOne,
@@ -48,8 +53,9 @@ export const ABOUT_PAGE = "about";
 export const AUTHOR_PAGE = "author";
 export const PRACTICE_PAGE = "practice";
 export const LECTURES_PAGE = "lectures";
+export const BRATS_PAGE = "brat";
 
-export const TEST_PAGE = "test";
+export const TASK_PAGE = "task";
 export const NATIONAL_RANKING = "raking";
 export const NOT_FOUND_PAGE = "error";
 
@@ -64,6 +70,11 @@ export const presentationsArr = [
   { id: 8, path: "8", Element: PressentationsEight },
   { id: 9, path: "9", Element: PressentationsNine },
   { id: 10, path: "10", Element: PressentationsTen },
+  { id: 11, path: "11", Element: PressentationsEleven },
+  { id: 12, path: "12", Element: PressentationsTvelwe },
+  { id: 13, path: "13", Element: PressentationsThirteen },
+  { id: 14, path: "14", Element: PressentationsFourteen },
+  { id: 15, path: "15", Element: PressentationsFiveteen },
 ];
 export const lecturesArr = [
   { id: 1, path: "1", Element: LecturesOne },

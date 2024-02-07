@@ -4,7 +4,7 @@ import {
   LECTURES_PAGE,
   PRACTICE_PAGE,
   PRESENTATION_PAGE,
-  TEST_PAGE,
+  TASK_PAGE,
   TUTORIAL_PAGE,
   VIDEOS_PAGE,
 } from "../../router/const";
@@ -14,7 +14,7 @@ export const pages = [
   { id: 3, name: "Taqdimotlar", path: PRESENTATION_PAGE },
   { id: 4, name: "Videolar", path: VIDEOS_PAGE },
   { id: 5, name: "Amaliyotlar", path: PRACTICE_PAGE },
-  { id: 6, name: "Testlar", path: TEST_PAGE },
+  { id: 6, name: "Savollar", path: TASK_PAGE },
 ];
 export const settings = [
   { id: 1, name: "Muallif haqida", path: AUTHOR_PAGE },
