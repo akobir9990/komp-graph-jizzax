@@ -7,7 +7,6 @@ import a4 from "./ansvers/a4.png";
 import Tetraedr from "./ansvers/tetraedr.png";
 import Oktaedr from "./ansvers/oktaedr.png";
 import Ikosaedr from "./ansvers/ikosaedr.png";
-// import Dodekaedr from "./ansvers/dodekaedr.png";
 import Kub from "./ansvers/geksaedr.png";
 
 import kesikOktaedr from "./ansvers/kesikOktaedr.png";

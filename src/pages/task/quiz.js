@@ -17,10 +17,10 @@ export const questions = [
     questionText:
       "Axborot- lotincha information so’zidan olingan bo’lib … degan ma’noni beradi.",
     answerOptions: [
-      { id: 1, answerText: "ko’rsatish", isCorrect: false },
       { id: 2, answerText: "tushuntirish", isCorrect: true },
-      { id: 3, answerText: "anglash", isCorrect: false },
+      { id: 1, answerText: "ko’rsatish", isCorrect: false },
       { id: 4, answerText: "bilmaslik", isCorrect: false },
+      { id: 3, answerText: "anglash", isCorrect: false },
     ],
   },
   {
