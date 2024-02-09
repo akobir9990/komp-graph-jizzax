@@ -1,11 +1,15 @@
-import React, { useReducer, useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import { packs } from "../task/packs";
 import { Container, Draggable } from "react-smooth-dnd";
 import { Button } from "@mui/material";
 
 function Brat() {
   const [randomNumber, setRandomNumber] = useState(0);
-  const [state, dispatch] = useReducer(reducer, packs[randomNumber]);
+  const [complatedAnswers, setComplatedAnswers] = useState([randomNumber]);
+
+  const getRndNumber = () => {
+    return Math.floor(Math.random() * packs.length);
+  };
 
   function reducer(state, { type, payload }) {
     switch (type) {
@@ -13,9 +17,7 @@ function Brat() {
         const { removedIndex, addedIndex } = payload;
         const result = state.answers.map((i, idx, arr) => {
           const removedObj = arr[removedIndex];
-          console.log("removedObj => ", removedObj);
           const addedObj = arr[addedIndex];
-          console.log("addedObj => ", addedObj);
           if (idx === removedIndex) {
             return {
               ...i,
@@ -38,23 +40,23 @@ function Brat() {
         return {
           ...state,
         };
+      case "handle_next":
+        // const { randomNumber } = payload;
+        let rndNumber = getRndNumber();
+        return packs[rndNumber];
       default:
         return state;
     }
   }
-
+  const [state, dispatch] = useReducer(reducer, packs[randomNumber]);
+  console.log("state => ", state);
   const onDrop = ({ removedIndex, addedIndex }) => {
     dispatch({ type: "answer_moved", payload: { removedIndex, addedIndex } });
   };
-  const getRandomNumber = () => {
-    return Math.floor(Math.random() * packs.length);
+
+  const handleNext = () => {
+    dispatch({ type: "handle_next" });
   };
-  const handleNext = (rnd) => {
-    let rndNumber = getRandomNumber();
-    setRandomNumber(rndNumber);
-  };
-  console.log("getrandomnumber => ", randomNumber);
-  console.log("state => ", state);
 
   return (
     <div className="h-[100vh]">
@@ -78,7 +80,7 @@ function Brat() {
                   key={item.id}
                 >
                   <img
-                    className="select-none h-[90%]"
+                    className="select-none"
                     src={item.answer}
                     alt=""
                     draggable={false}
@@ -90,6 +92,7 @@ function Brat() {
         </div>
       </div>
       <Button
+        disabled={packs.length === complatedAnswers.length}
         variant="outlined"
         onClick={handleNext}
         className="py-4"
