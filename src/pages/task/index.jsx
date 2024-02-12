@@ -73,7 +73,7 @@ function Brat() {
     getRandomNumber();
   };
   return (
-    <div className="h-[100vh]">
+    <div className="h-[100%]">
       <h1 className="text-4xl text-center my-5">
         Savolni yonidagi javoblardan to'gri keladigini surib qo'ying
       </h1>
