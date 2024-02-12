@@ -11,7 +11,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import ComputerIcon from "@mui/icons-material/Computer";
-import PersonIcon from "@mui/icons-material/Person";
+import muxitdinov from "../../assets/images/author.jpg";
 import Router from "../../router/router";
 import { NavLink } from "react-router-dom";
 import "../../router/const";
@@ -143,7 +143,11 @@ function ResponsiveAppBar() {
             <Box className="">
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <PersonIcon className="bg-[white] rounded-full" />
+                  <img
+                    className="w-[40px] rounded-full"
+                    src={muxitdinov}
+                    alt=""
+                  />
                 </IconButton>
               </Tooltip>
               <Menu

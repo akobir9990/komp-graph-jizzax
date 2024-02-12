@@ -53,7 +53,6 @@ export const ABOUT_PAGE = "about";
 export const AUTHOR_PAGE = "author";
 export const PRACTICE_PAGE = "practice";
 export const LECTURES_PAGE = "lectures";
-export const BRATS_PAGE = "brat";
 
 export const TASK_PAGE = "task";
 export const NATIONAL_RANKING = "raking";

@@ -7,6 +7,8 @@ import a4 from "./ansvers/a4.png";
 import Tetraedr from "./ansvers/tetraedr.png";
 import Oktaedr from "./ansvers/oktaedr.png";
 import Ikosaedr from "./ansvers/ikosaedr.png";
+import Dodekaedr from "./ansvers/dodekaedr.png";
+
 import Kub from "./ansvers/geksaedr.png";
 
 import kesikOktaedr from "./ansvers/kesikOktaedr.png";
@@ -73,17 +75,18 @@ export const packs = [
     ],
     answers: [
       {
-        id: 1,
-        title: "A0",
-        order: 1,
-        answer: a0,
-      },
-      {
         id: 2,
         title: "A1",
         order: 2,
         answer: a1,
       },
+      {
+        id: 1,
+        title: "A0",
+        order: 1,
+        answer: a0,
+      },
+
       {
         id: 3,
         title: "A2",
@@ -91,16 +94,16 @@ export const packs = [
         answer: a2,
       },
       {
-        id: 4,
-        title: "A3",
-        order: 4,
-        answer: a3,
-      },
-      {
         id: 5,
         title: "A4",
         order: 5,
         answer: a4,
+      },
+      {
+        id: 4,
+        title: "A3",
+        order: 4,
+        answer: a3,
       },
     ],
   },
@@ -141,10 +144,23 @@ export const packs = [
     ],
     answers: [
       {
-        id: 1,
-        title: "Tetraedr",
-        order: 1,
-        answer: Tetraedr,
+        id: 3,
+        title: "Ikosaedr",
+        order: 3,
+        answer: Ikosaedr,
+      },
+      {
+        id: 5,
+        title: "Kub(Geksaedr)",
+        order: 5,
+        answer: Kub,
+      },
+
+      {
+        id: 4,
+        title: "Dodekaedr",
+        order: 4,
+        answer: Dodekaedr,
       },
       {
         id: 2,
@@ -153,22 +169,10 @@ export const packs = [
         answer: Oktaedr,
       },
       {
-        id: 3,
-        title: "Ikosaedr",
-        order: 3,
-        answer: Ikosaedr,
-      },
-      {
-        id: 4,
-        title: "Dodekaedr",
-        order: 4,
-        answer: Ikosaedr,
-      },
-      {
-        id: 5,
-        title: "Kub(Geksaedr)",
-        order: 5,
-        answer: Kub,
+        id: 1,
+        title: "Tetraedr",
+        order: 1,
+        answer: Tetraedr,
       },
     ],
   },
@@ -215,11 +219,12 @@ export const packs = [
         answer: kesikOktaedr,
       },
       {
-        id: 2,
-        title: "Piramida",
-        order: 2,
-        answer: piramida,
+        id: 5,
+        title: "Prizma",
+        order: 5,
+        answer: prizma,
       },
+
       {
         id: 3,
         title: "Silindr",
@@ -233,10 +238,10 @@ export const packs = [
         answer: konus,
       },
       {
-        id: 5,
-        title: "Prizma",
-        order: 5,
-        answer: prizma,
+        id: 2,
+        title: "Piramida",
+        order: 2,
+        answer: piramida,
       },
     ],
   },
@@ -271,28 +276,28 @@ export const packs = [
     ],
     answers: [
       {
-        id: 1,
-        title: "Оld оyna",
-        order: 1,
-        answer: oldOyna,
-      },
-      {
-        id: 2,
-        title: "Avtоmоbil хоdоvоy uskunalari",
-        order: 2,
-        answer: xodovoy,
-      },
-      {
         id: 3,
         title: "Transmissiya uskunalari va uzatmalari",
         order: 3,
         answer: transmissiya,
       },
       {
+        id: 1,
+        title: "Оld оyna",
+        order: 1,
+        answer: oldOyna,
+      },
+      {
         id: 4,
         title: "Avtоmоbilning оld kо‘prik qismi",
         order: 4,
         answer: oldMost,
+      },
+      {
+        id: 2,
+        title: "Avtоmоbil хоdоvоy uskunalari",
+        order: 2,
+        answer: xodovoy,
       },
     ],
   },
@@ -327,10 +332,10 @@ export const packs = [
     ],
     answers: [
       {
-        id: 1,
-        title: "Transpоrtning yetkazish qismlari",
-        order: 1,
-        answer: yetkazishQismi,
+        id: 3,
+        title: "1.6 Dvigatel",
+        order: 3,
+        answer: dvigatel16,
       },
       {
         id: 2,
@@ -338,17 +343,18 @@ export const packs = [
         order: 2,
         answer: dvigatel15,
       },
-      {
-        id: 3,
-        title: "1.6 Dvigatel",
-        order: 3,
-        answer: dvigatel16,
-      },
+
       {
         id: 4,
         title: "1.8 Dvigatel",
         order: 4,
         answer: dvigatel18,
+      },
+      {
+        id: 1,
+        title: "Transpоrtning yetkazish qismlari",
+        order: 1,
+        answer: yetkazishQismi,
       },
     ],
   },
@@ -389,6 +395,12 @@ export const packs = [
         answer: dvigatel20,
       },
       {
+        id: 4,
+        title: "Avtоmоbilning asоsiy qismlari ",
+        order: 4,
+        answer: asosiyQism,
+      },
+      {
         id: 2,
         title: "2.5 Dvigatel",
         order: 2,
@@ -399,12 +411,6 @@ export const packs = [
         title: "Avtоmоbil kuzоvi eхtiyоt qismlari",
         order: 3,
         answer: kuzov,
-      },
-      {
-        id: 4,
-        title: "Avtоmоbilning asоsiy qismlari ",
-        order: 4,
-        answer: asosiyQism,
       },
     ],
   },
@@ -454,12 +460,13 @@ export const packs = [
         answer: konstruksiya,
       },
       {
-        id: 2,
+        id: 4,
         title:
-          "Talabalarda kоnstruktiv kоmpetensiyani rivоj–lantirishning metоdik va didaktik asоslari",
-        order: 2,
-        answer: konstruksiyaDvigatel,
+          "Avtоmоbilning energiya manbai dvigatel, transmissiya, yurish qismi, bоshqaruv meхanizmi",
+        order: 4,
+        answer: konstruksiyaKuzov,
       },
+
       {
         id: 3,
         title:
@@ -467,12 +474,13 @@ export const packs = [
         order: 3,
         answer: konstruksiyaRama,
       },
+
       {
-        id: 4,
+        id: 2,
         title:
-          "Avtоmоbilning energiya manbai dvigatel, transmissiya, yurish qismi, bоshqaruv meхanizmi",
-        order: 4,
-        answer: konstruksiyaKuzov,
+          "Talabalarda kоnstruktiv kоmpetensiyani rivоj–lantirishning metоdik va didaktik asоslari",
+        order: 2,
+        answer: konstruksiyaDvigatel,
       },
     ],
   },

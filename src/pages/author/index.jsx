@@ -1,7 +1,7 @@
 import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import abdullayev from "../../assets/images/author.jpg";
+import muxitdinov from "../../assets/images/author.jpg";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import PhoneIcon from "@mui/icons-material/Phone";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
@@ -13,7 +13,7 @@ export default function MediaCard() {
         <div>
           <img
             className=" max-w-[300px] rounded-md"
-            src={abdullayev}
+            src={muxitdinov}
             alt="Abdullayev Zafar Sayfutdinovich"
           />
         </div>

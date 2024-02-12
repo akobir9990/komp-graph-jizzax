@@ -11,7 +11,6 @@ import Videos from "../pages/videos";
 import Tutorial from "../pages/tutorial";
 import TaskPage from "../pages/task";
 import Lectures from "../pages/lectures";
-import Brat from "../pages/brat";
 
 import "./const";
 import {
@@ -58,7 +57,6 @@ function router() {
             <Route key={item.id} path={item.path} element={<item.Element />} />
           ))}
         </Route>
-        <Route path={BRATS_PAGE} element={<Brat />} />
       </Routes>
     </div>
   );

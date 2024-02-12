@@ -1,141 +1,130 @@
-// import React, { useEffect, useState } from "react";
-// import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
-// import { packs } from "./packs";
-// import { Box, Button } from "@mui/material";
+import React, { useReducer, useState } from "react";
+import { packs } from "../task/packs";
+import { Container, Draggable } from "react-smooth-dnd";
+import { Button } from "@mui/material";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
-// export default function Test() {
-//   const [randomNumber, setRandomNumber] = useState(0);
-//   const [currentQuestion, setCurrentQuestion] = useState(0);
-//   const [complatedAnswerIds, setComplatedAnswersIds] = useState([]);
-//   const [cardList, setCardList] = useState(packs[randomNumber].answers);
-//   const [currentCard, setCurrentCard] = useState(null);
+function Brat() {
+  const [randomNumber, setRandomNumber] = useState(0);
+  const [complatedAnswers, setComplatedAnswers] = useState([randomNumber]);
 
-//   const quizLimite = 4;
+  function reducer(state, { type, payload }) {
+    switch (type) {
+      case "answer_moved":
+        const { removedIndex, addedIndex } = payload;
+        const result = state.answers.map((i, idx, arr) => {
+          const removedObj = arr[removedIndex];
+          const addedObj = arr[addedIndex];
+          if (idx === removedIndex) {
+            return {
+              ...i,
+              order: addedObj.order,
+            };
+          } else if (idx === addedIndex) {
+            return {
+              ...i,
+              order: removedObj.order,
+            };
+          } else {
+            return i;
+          }
+        });
+        return {
+          ...state,
+          answers: result.sort((a, b) => a.order - b.order),
+        };
+      case "question_moved":
+        return {
+          ...state,
+        };
+      case "handle_next":
+        console.log("payload => ", payload);
+        return packs[payload.newRandom];
+      default:
+        return state;
+    }
+  }
+  const [state, dispatch] = useReducer(reducer, packs[randomNumber]);
+  const onDrop = ({ removedIndex, addedIndex }) => {
+    dispatch({ type: "answer_moved", payload: { removedIndex, addedIndex } });
+  };
 
-//   console.log("randomNumber => ", randomNumber);
+  console.log("random number => ", randomNumber);
 
-//   const nextQeustion = () => {
-//     if (currentQuestion < packs.length - 1) {
-//       setCurrentQuestion(currentQuestion + 1);
-//     }
-//     randomQuestion();
-//   };
-//   const getRandomNumber = () => {
-//     return Math.floor(Math.random() * packs.length);
-//   };
-//   const randomQuestion = () => {
-//     const randomNum = getRandomNumber();
+  const handleNext = () => {
+    const getRandomNumber = () => {
+      const newRandom = Math.floor(Math.random() * packs.length);
+      if (complatedAnswers.includes(newRandom)) {
+        return getRandomNumber();
+      }
+      if (randomNumber !== newRandom) {
+        setRandomNumber(newRandom);
+        setComplatedAnswers((p) => [...p, newRandom]);
+        dispatch({
+          type: "handle_next",
+          payload: {
+            newRandom,
+          },
+        });
+        return newRandom;
+      }
+      return getRandomNumber();
+    };
+    getRandomNumber();
+  };
 
-//     if (!complatedAnswerIds.includes(randomNum)) {
-//       setComplatedAnswersIds((p) => [...p, randomNum]);
-//       setRandomNumber(randomNum);
-//     } else {
-//       randomQuestion();
-//     }
-//   };
-//   console.log(getRandomNumber);
-
-//   const handleDragStart = (e, card) => {
-//     setCurrentCard(card);
-//   };
-//   const handleDragEnd = (e) => {
-//     e.target.style.background = "#c3c3c3";
-//   };
-//   const handleDragOver = (e) => {
-//     e.preventDefault();
-//     e.target.style.background = "black";
-//   };
-//   const handleDrop = (e, card) => {
-//     e.preventDefault();
-//     setCardList(
-//       cardList.map((c) => {
-//         if (c.id === card.id) {
-//           return { ...c, order: currentCard.order };
-//         }
-//         if (c.id === currentCard.id) {
-//           return { ...c, order: card.order };
-//         }
-//         return c;
-//       })
-//     );
-//     e.target.style.background = "#c3c3c3";
-//   };
-
-//   const sortCards = (a, b) => {
-//     if (a.order > b.order) {
-//       return 1;
-//     } else {
-//       return -1;
-//     }
-//   };
-
-//   useEffect(() => {
-//     setRandomNumber(getRandomNumber());
-//   }, []);
-
-//   return (
-//     <div>
-//       <h1 className="text-4xl m-4">
-//         Savol yoniga to'g'ri javobni surib qo'ying
-//       </h1>
-//       <div className="flex w-[100%]">
-//         <div className="w-[70%]">
-//           {packs[randomNumber].questions.map((question) => {
-//             return (
-//               <div
-//                 key={question.id}
-//                 className="h-[100px] flex justify-between items-center bg-[#c3c3c3] rounded-md m-4 p-4"
-//               >
-//                 <div className="h-[100%] flex items-center justify-between text-[24px] ">
-//                   {question.question}
-//                 </div>
-//                 <KeyboardDoubleArrowRightIcon className="scale-150" />
-//               </div>
-//             );
-//           })}
-//         </div>
-//         <div className="w-[30%]">
-//           {cardList.sort(sortCards).map((card) => {
-//             return (
-//               <div
-//                 key={card.id}
-//                 className="h-[100px] flex justify-between bg-[#c3c3c3] rounded-md m-4 p-4"
-//                 draggable={true}
-//                 onDragStart={(e) => handleDragStart(e, card)}
-//                 onDragEnd={(e) => handleDragEnd(e)}
-//                 onDragLeave={(e) => handleDragEnd(e)}
-//                 onDragOver={(e) => handleDragOver(e)}
-//                 onDrop={(e) => handleDrop(e, card)}
-//               >
-//                 <img draggable={false} src={card.answer} alt="" />
-//               </div>
-//             );
-//           })}
-//         </div>
-//       </div>
-//       <Box className="sm:flex-row sm:my-3 flex flex-col justify-between">
-//         <Button
-//           disabled={currentQuestion === quizLimite - 1}
-//           variant="outlined"
-//           onClick={nextQeustion}
-//           className="py-4"
-//           sx={{
-//             margin: "5px 0px",
-//           }}
-//         >
-//           keyingi savol
-//         </Button>
-//       </Box>
-//     </div>
-//   );
-// }
-
-import React from "react";
-
-function index() {
   return (
-    <div className="h-[100vh] text-center text-5xl"> we are workin on it</div>
+    <div className="h-[100vh]">
+      <h1 className="text-4xl text-center my-5">
+        Savolni yonidagi javoblardan to'gri keladigini surib qo'ying
+      </h1>
+      <div className="flex flex-grow gap-1  border border-[grey]">
+        <div className="flex-grow justify-between">
+          {state.questions.map((item) => (
+            <div
+              className="flex justify-between items-center h-[150px] rounded-md border border-[gray] cursor-pointer select-none overflow-hidden m-1 text-2xl p-1"
+              key={item.id}
+            >
+              {item.question}
+              <ArrowForwardIosIcon />
+            </div>
+          ))}
+        </div>
+        <div>
+          <Container lockAxis="y" onDrop={onDrop}>
+            {state.answers.map((item, idx) => (
+              <Draggable className="m-1" key={item.id}>
+                <div
+                  className="w-[150px] h-[150px] rounded-md border border-[gray] cursor-pointer select-none overflow-hidden "
+                  key={item.id}
+                >
+                  <img
+                    className="select-none"
+                    src={item.answer}
+                    alt=""
+                    draggable={false}
+                  />
+                </div>
+              </Draggable>
+            ))}
+          </Container>
+        </div>
+      </div>
+      <div className="btns">
+        <Button
+          disabled={packs.length === complatedAnswers.length}
+          variant="outlined"
+          onClick={handleNext}
+          className="py-4"
+          sx={{
+            margin: "5px 0px",
+          }}
+        >
+          keyingi savol
+        </Button>
+      </div>
+    </div>
   );
 }
 
-export default index;
+export default Brat;
