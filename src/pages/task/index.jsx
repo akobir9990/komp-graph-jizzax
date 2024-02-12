@@ -72,7 +72,6 @@ function Brat() {
     };
     getRandomNumber();
   };
-
   return (
     <div className="h-[100vh]">
       <h1 className="text-4xl text-center my-5">
@@ -101,7 +100,6 @@ function Brat() {
                   <img
                     className="select-none"
                     src={item.answer}
-                    alt=""
                     draggable={false}
                   />
                 </div>
