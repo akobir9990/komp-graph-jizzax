@@ -3,10 +3,12 @@ import { packs } from "../task/packs";
 import { Container, Draggable } from "react-smooth-dnd";
 import { Button } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import clsx from "clsx";
 
 function Brat() {
   const [randomNumber, setRandomNumber] = useState(0);
   const [complatedAnswers, setComplatedAnswers] = useState([randomNumber]);
+  const [shouldCheck, setShouldCheck] = useState(false);
 
   function reducer(state, { type, payload }) {
     switch (type) {
@@ -71,17 +73,31 @@ function Brat() {
       return getRandomNumber();
     };
     getRandomNumber();
+    setShouldCheck(false);
   };
+
+  const handeChecker = () => {
+    setShouldCheck(true);
+  };
+
+  console.log("state => ", state);
+
   return (
-    <div className="h-[100%]">
+    <div className="max-h-[100%] min-h-[100vh]">
       <h1 className="text-4xl text-center my-5">
         Savolni yonidagi javoblardan to'gri keladigini surib qo'ying
       </h1>
       <div className="flex flex-grow gap-1  border border-[grey]">
         <div className="flex-grow justify-between">
-          {state.questions.map((item) => (
+          {state.questions.map((item, idx) => (
             <div
-              className="flex justify-between items-center h-[150px] rounded-md border border-[gray] cursor-pointer select-none overflow-hidden m-1 text-2xl p-1"
+              className={clsx(
+                `flex justify-between items-center h-[150px] rounded-md border border-[gray] cursor-pointer select-none overflow-hidden m-1 text-2xl p-1`,
+                shouldCheck &&
+                  (item.id === state.answers[idx].id
+                    ? "bg-green-300"
+                    : "bg-red-200")
+              )}
               key={item.id}
             >
               {item.question}
@@ -98,9 +114,10 @@ function Brat() {
                   key={item.id}
                 >
                   <img
-                    className="select-none"
                     src={item.answer}
+                    className="select-none"
                     draggable={false}
+                    alt="answer"
                   />
                 </div>
               </Draggable>
@@ -108,7 +125,7 @@ function Brat() {
           </Container>
         </div>
       </div>
-      <div className="btns">
+      <div className="btns flex justify-between mt-10">
         <Button
           disabled={packs.length === complatedAnswers.length}
           variant="outlined"
@@ -119,6 +136,17 @@ function Brat() {
           }}
         >
           keyingi savol
+        </Button>
+        <Button
+          disabled={packs.length === complatedAnswers.length}
+          variant="outlined"
+          onClick={handeChecker}
+          className="py-4"
+          sx={{
+            margin: "5px 0px",
+          }}
+        >
+          Tekshirish
         </Button>
       </div>
     </div>
